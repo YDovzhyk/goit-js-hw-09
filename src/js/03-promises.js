@@ -12,8 +12,9 @@ event.preventDefault();
 
 let delay = Number(firstInput.value);
 for (let i = 1; i <= thirdInput.value; i++) {
+  if (i > 1) {
   delay += Number(secondInput.value);
-
+  };
   createPromise(i, delay)
   .then(({ position, delay }) => {
     Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
